@@ -1,0 +1,40 @@
+<% include partials/header %>
+<% include partials/navbar %>
+<div id="demo" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+
+    <!-- The slideshow -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://i.ytimg.com/vi/VnKG9oS_Kf0/maxresdefault.jpg" alt="Los Angeles" width="50%" height="15%">
+        </div>
+        <div class="carousel-item">
+            <img src="https://i.ytimg.com/vi/VnKG9oS_Kf0/maxresdefault.jpg" alt="Chicago" width="50%" height="15%">
+        </div>
+        <div class="carousel-item">
+            <img src="https://i.ytimg.com/vi/VnKG9oS_Kf0/maxresdefault.jpg" alt="New York" width="50%" height="15%">
+        </div>
+    </div>
+
+</div>
+<br>
+<div class="container-fluid">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="row">
+                <% game.forEach(function(g){ %>
+                <div class="col">
+                    <div class="card">
+                        <img class="card-img-top" src="<%= g.icon %>" alt="Card image" width="50%">
+                        <div class="card-body">
+                            <h6 class="card-title"><%= g.title %></h6>
+                            <a href="/games/<%= g._id %>" class="btn btn-primary">Details</a>
+                        </div>
+                    </div>
+                </div>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+</div>
+<% include partials/footer %>
